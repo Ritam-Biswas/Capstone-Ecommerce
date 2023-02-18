@@ -1,0 +1,23 @@
+.category-container{
+
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+
+    .category-box{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        margin: 18% auto;
+        padding: 5%;
+        background-color: #ffffff9e;
+
+        *{
+            margin: 0%;
+        }
+
+    }
+
+}

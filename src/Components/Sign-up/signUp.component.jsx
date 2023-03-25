@@ -38,7 +38,6 @@ const SignUp = () => {
         try{
             const response = await createUserDocumentFromEmailandPassword(email, password);
             await createUserDocumentFromAuth(response.user,{Name:displayName});
-            resetFormFields();
         }catch(error){
             if(error.code === "auth/email-already-in-use"){
                 alert("Cannot create user, email already in use")
@@ -46,7 +45,7 @@ const SignUp = () => {
                 console.log(error);
             }
         }
-
+        resetFormFields();
     }
 
     return(
@@ -55,13 +54,13 @@ const SignUp = () => {
             <p>Sign Up with your email and password</p>
             <form onSubmit={handleSubmit}>
 
-                <FormInput label="Name" type="text" required onChange={handleChange} name="displayName" value={displayName}/>
+                <FormInput label="Name" type="text" required onChange={handleChange} name="displayName" value={displayName} id="input3"/>
 
-                <FormInput label="Email" type="email" required onChange={handleChange} name="email" value={email}/>
+                <FormInput label="Email" type="email" required onChange={handleChange} name="email" value={email} id="input4"/>
 
-                <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password}/>
+                <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password} id="input5"/>
 
-                <FormInput label="Confirm Password" type="password" required onChange={handleChange} name="confirmPassword" value={confirmPassword}/>
+                <FormInput label="Confirm Password" type="password" required onChange={handleChange} name="confirmPassword" value={confirmPassword} id="input6"/>
 
                 <div className="button-container">
                     <Button type="submit" buttonType="inverted">Sign Up</Button>

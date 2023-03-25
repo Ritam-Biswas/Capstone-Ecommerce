@@ -1,0 +1,19 @@
+.category-page-container{
+    h2{
+        margin-bottom: 2%;
+        margin-top: 4%;
+        text-align: center;
+    }
+    
+    .products-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 1%;
+        margin: 0% 3%;
+    
+        .product-card-container{
+            margin-bottom: 10%;
+        }
+    }
+}
+

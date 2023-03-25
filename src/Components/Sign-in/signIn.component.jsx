@@ -1,9 +1,8 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { signInAuthUserWithEmailAndPassword, signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase.utils";
 import FormInput from "../Form-input/formInput.component";
 import Button from "../Button/button.component";
 import "./signIn.styles.scss";
-import { UserContext } from "../../Contexts/user.context";
 
 const defaultFormFields = {
     email : "",
@@ -11,8 +10,6 @@ const defaultFormFields = {
 }
 
 const SignIn = () => {
-
-    const {setCurrentUser} = useContext(UserContext)
 
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { email, password } = formFields;
@@ -29,8 +26,7 @@ const SignIn = () => {
     }
 
     const logGoogleUser = async () => {
-        const response = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(response.user);
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async (event) => {
@@ -38,8 +34,7 @@ const SignIn = () => {
         event.preventDefault();
 
         try {
-            const {user} = await signInAuthUserWithEmailAndPassword(email,password);
-            setCurrentUser(user);
+            await signInAuthUserWithEmailAndPassword(email,password);
         } catch (error) {
             console.log(error);
         }
@@ -53,9 +48,9 @@ const SignIn = () => {
             <p>Sign In with your email and password</p>
             <form onSubmit={handleSubmit}>
 
-                <FormInput label="Email" type="email" required onChange={handleChange} name="email" value={email}/>
+                <FormInput label="Email" type="email" required onChange={handleChange} name="email" value={email} id="input1"/>
 
-                <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password}/>
+                <FormInput label="Password" type="password" required onChange={handleChange} name="password" value={password} id="input2"/>
 
                 <div className="button-container">
                     <Button type="submit" buttonType="inverted">Sign In</Button>

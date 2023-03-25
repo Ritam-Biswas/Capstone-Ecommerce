@@ -1,0 +1,30 @@
+.checkout-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .item-quantity{
+        display: flex;
+        .quantity{
+            margin: 0% 20%;
+        }
+        
+        .arrow{
+            cursor: pointer;
+        }
+
+    }
+
+    .item-image{
+        flex-basis: 16%;
+        height: 20vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .item-remove{
+        cursor: pointer;
+    }
+
+}

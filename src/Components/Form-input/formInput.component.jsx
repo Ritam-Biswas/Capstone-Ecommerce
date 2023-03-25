@@ -1,6 +1,8 @@
 import "./formInput.styles.scss";
 
+
 const FormInput = ({label,...otherprops}) => {
+
     return(
         <div className="form-input-container">
             <label className="form-input-label">{label}</label>
@@ -8,5 +10,7 @@ const FormInput = ({label,...otherprops}) => {
         </div>
     )
 }
+
+
 
 export default FormInput;

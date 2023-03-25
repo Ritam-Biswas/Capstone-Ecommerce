@@ -1,0 +1,19 @@
+.cart-icon-container{
+    position: relative;
+    height: 120%;
+    cursor: pointer;
+
+        .item-count{
+            position: absolute;
+            font-size: 12px;
+            top: 30%;
+            right: 37%;
+        }
+
+        .cart-icon{
+            height: 100%;
+        }
+
+}
+
+

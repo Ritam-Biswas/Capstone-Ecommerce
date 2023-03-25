@@ -1,4 +1,6 @@
 .form-input-container{
+
+    position: relative;
     
     display: flex;
     flex-direction: column;
@@ -6,6 +8,18 @@
 
     .form-input{
         padding: 2%;
+        border: none;
+        border-bottom: 2px solid #00000038;
+    }
+
+    .form-input-label{
+        color: #00000070;
+        position: absolute;
+    }
+
+    .form-input:focus{
+        outline: none;
+        border-bottom: 2px solid #00000038;
     }
 
 }
